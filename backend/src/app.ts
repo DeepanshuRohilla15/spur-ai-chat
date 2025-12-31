@@ -6,7 +6,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://spur-ai-chat-pi.vercel.app/",
+    origin: [
+      "http://localhost:5173", // local Vite
+      "http://localhost:3000",
+      "https://spur-ai-chat-pi.vercel.app", // Vercel frontend
+    ],
+    credentials: true,
   })
 );
 
