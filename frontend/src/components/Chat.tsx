@@ -6,7 +6,9 @@ type Message = {
   content: string;
 };
 
-const API_URL = import.meta.env.VITE_API_URL + "/chat/message";
+const API_URL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/chat/message`
+  : "";
 
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
