@@ -6,7 +6,7 @@ type Message = {
   content: string;
 };
 
-const API_URL = "http://localhost:3000/chat/message";
+const API_URL = process.env.REACT_APP_API_URL + "/chat/message";
 
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
